@@ -1,67 +1,70 @@
-TestBuffer Klass
+Testerna nedan är några som jag anser varit viktigast, finns säkerligen fler som går att testa men dessa var dom som jag tänkte på:
+
+TEST BUFFER;
 
 isBufferNotEmpty:
+Kontrollerar att buffer ej är tom efter att objekt lagts till.
+Testar att producer lägger till objekt i bufferten och att consumer kan förbruka.
 
-Syfte: Kontrollerar att bufferten inte är tom efter att ett objekt har lagts till.
-Viktigt: Garanterar att producenten framgångsrikt lägger till ett objekt i bufferten och att konsumenten kan ta bort det.
 isBufferEmpty:
+ontrollerar att buffer är tom efter att objekt har lagts till och förbrukats.
+Validerar att consumer tar bort objekt från buffer och att den är tom.
 
-Syfte: Kontrollerar om bufferten blir tom efter att ett objekt har lagts till och tagits bort.
-Viktigt: Validerar att konsumenten tar bort objekt från bufferten och lämnar den tom efter bearbetning.
 testException:
+Testar InterruptedException vid borttagning av objekt.
+Säkerställer att consumer hanterar Exception korrekt efter förbrukning.
 
-Syfte: Testar om ett InterruptedException kastas vid borttagning av objekt.
-Viktigt: Säkerställer att konsumenten hanterar avbrott korrekt under borttagningsprocessen.
 testReturnTrue:
+Validerar att consumer's addItem-metod returnerar true när ett objekt lagts till.
+Bekräftar tillägget av ett objekt av producer.
 
-Syfte: Validerar att producentens addItem-metod returnerar true när ett objekt läggs till.
-Viktigt: Bekräftar den framgångsrika tillägget av ett objekt av producenten.
 testOutput:
+Kontrollerar om rätt output visas.
+Verifierar att producers tillagda objekt resulterar i korrent output.
 
-Syfte: Kontrollerar om rätt utmatning skrivs till systemet.
-Viktigt: Verifierar att producentens tillagda objekt resulterar i förväntad utmatning.
-TestItem Klass
+
+TEST ITEM;
+
 testEmptyStringToSetID:
+Testar en tom String som ID för objekt.
+Säkerställer att det fungerar att sätta en tom String som ID.
 
-Syfte: Testar att sätta en tom sträng som ID för ett objekt.
-Viktigt: Säkerställer att det fungerar att sätta en tom sträng som ID.
 testIntegersInsteadOfLettersSetID:
+Testar att Integers kan sättas som ID för objekt.
+Säkerställer att objektet hanterar Integers korrekt som ID.
 
-Syfte: Validerar att numeriska värden kan sättas som ID för ett objekt.
-Viktigt: Säkerställer att objektet hanterar numeriska ID.
 testLowerCaseSetId:
+Testar att sätta LowerCase som ID för objekt.
+Bekräftar att det fungerar att sätta LowerCase som ID.
 
-Syfte: Testar att sätta en småbokstav som ID för ett objekt.
-Viktigt: Bekräftar att det fungerar att sätta en småbokstav som ID.
 testNull:
+Testar att sätta ett ID till null, throws NullPointerException.
+Säkerställer att objektet hanterar null-värden för ett ID.
 
-Syfte: Testar om att sätta ID till null kastar ett NullPointerException.
-Viktigt: Säkerställer att objektet hanterar null-värden för ID på rätt sätt.
 testIdLowerCase:
+Testar att metoden "getId" returnerar ID till LowerCase.
+Säkerställer bokstavsstorlek för returnerade ID.
 
-Syfte: Validerar att metoden getId returnerar en version av ID i små bokstäver.
-Viktigt: Garanterar konsekvens i bokstavsstorlek för det returnerade ID.
 testIdIsNull:
+Testar om det är möjligt att skapa ett objekt med ett null-ID och om det throws NullPointerException.
+Bekräftar att constructor hanterar null-ID på rätt sätt.
 
-Syfte: Testar om det är möjligt att skapa ett objekt med ett null ID, och om det kastar ett NullPointerException.
-Viktigt: Bekräftar att konstruktören hanterar null ID på rätt sätt.
 testEmptyString:
+Testar om en tom String hanteras korrekt som ett ID.
+Säkerställer att objektet kan hantera och lagra en tom String som ett ID.
 
-Syfte: Kontrollerar om en tom sträng hanteras korrekt som ID.
-Viktigt: Säkerställer att objektet kan hantera och lagra en tom sträng som ID.
 testLowerCaseToString:
+Testar att metoden toString returnerar en ett ID till små bokstäver.
+Garanterar storlek av bokstäver för den returnerade Stringen.
 
-Syfte: Validerar att metoden toString returnerar en version av ID i små bokstäver.
-Viktigt: Garanterar konsekvens i bokstavsstorlek för den returnerade strängrepresentationen.
 testIntegersInsteadOfLetters:
+Testar att skapa objekt med Integers som ett ID.
+Bekräftar att objektet kan hantera Integers som ett ID.
 
-Syfte: Testar att skapa ett objekt med numeriska värden som ID.
-Viktigt: Bekräftar att objektet kan hantera numeriska ID.
 testIntegersToString:
+Testar om metoden toString hanterar Integers som ett ID på ett korrekt sätt.
+Säkerställer att Strings av ett objekt fungerar med Integers som ett ID.
 
-Syfte: Kontrollerar om metoden toString hanterar numeriska ID korrekt.
-Viktigt: Säkerställer att strängrepresentationen av objektet fungerar med numeriska ID.
 testEmptyStringToString:
-
-Syfte: Validerar att metoden toString fungerar med en tom sträng som ID.
-Viktigt: Säkerställer att strängrepresentationen av objektet hanterar tomma ID på rätt sätt.
+Testar att metoden toString fungerar med en tom String som ett ID.
+Säkerställer att en String av objektet hanterar tomma ID på ett rätt sätt.
